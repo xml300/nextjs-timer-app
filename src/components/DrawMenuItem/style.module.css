@@ -1,0 +1,50 @@
+.drawMenuItem {
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.drawMenuItem:hover {
+    transform: scale(1, 1.1);
+    font-weight: bold;
+}
+
+
+
+.line1 {
+    position: relative;
+    top: 0;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    transform: rotate(45deg);
+}
+
+.line2 {
+    position: relative;
+    top: -2px;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: -2px;
+    transform: rotate(-45deg);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0px;
+    transition: 0.3s;
+}
+
+
+.closeButton {
+    border: 0;
+    background-color: transparent;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+.closeButton:hover {
+    border: 1px solid white;
+    background-color: rgba(255, 0, 0 , 0.7);
+}

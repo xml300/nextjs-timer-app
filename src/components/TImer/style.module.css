@@ -1,0 +1,50 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    padding: 0;
+}
+  
+  
+.pageContent{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    align-items: center;
+}
+  
+.pageContentP {
+    text-align: center;
+    font-size: 72px;
+    padding-bottom: 20px;
+}
+  
+.buttonStart {
+    width: 100px;
+    margin-right: 10px;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: green;
+    font-size: 20px;
+    border: 0;
+}
+
+.buttonStart:hover {
+    background-color: rgb(3, 57, 3);
+}
+  
+  
+.buttonStop { 
+    width: 100px;
+    margin-right: 10px;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: red;
+    font-size: 20px;
+    border: 0;
+}
+
+.buttonStop:hover {
+    background-color: rgb(94, 5, 5);
+}

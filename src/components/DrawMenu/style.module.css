@@ -1,0 +1,75 @@
+.drawMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 0px;
+    height: 100vh;
+    background-color: rgb(35, 29, 29);
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.drawMenuButton {
+    position: fixed;
+    top: 30px;
+
+    left: 30px;
+    z-index: 2;
+    border: 0;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+.drawMenuButton div {
+    width: 50px;
+    height: 2px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+.newButton {
+    position: fixed;
+    top: 400px;
+    left: -40px;
+    background-color: transparent;
+    z-index: 2;
+    border: 0;
+    transition: 0.5s;
+}
+
+
+.line1 {
+    width: 2px;
+    height: 19px;
+    background-color: white;
+    margin: auto;
+}
+
+.line2 {
+    width: 40px;
+    height: 2px;
+    background-color: white;
+}
+
+.line3 {
+    width: 2px;
+    height: 19px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.noItems {
+    text-align: center;
+    font-size: 24px;
+    font-style: italic;
+    margin-top: 125px;
+    transition: 0.5s;
+}
+
+.hidden div:nth-of-type(1){
+    margin-left: -400px;
+}
