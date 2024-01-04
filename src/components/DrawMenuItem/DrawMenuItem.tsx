@@ -17,9 +17,13 @@ export default function DrawMenuItem({ timer, style }: { timer: Timers, style: s
 
     function handleCloseButton() {
         const timers = JSON.parse(localStorage.getItem('timers') || '[]');
-        const new_timers = timers.filter(el => el.id !== timer.id);
+        const new_timers = timers.filter((el: Timers) => el.id !== timer.id);
 
         localStorage.setItem('timers', JSON.stringify(new_timers));
+        
+        if(location.pathname.endsWith(timer.id.toString())){
+            router.push('/');
+        }
     }
         
     return (

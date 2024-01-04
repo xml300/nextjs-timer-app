@@ -68,7 +68,10 @@ export default function AddTimer() {
 
     function handleFocus(evt: FormEvent){
         const input = evt.target as HTMLInputElement;
+
         if(input.value == '') input.value = '00';
+
+        setTimeout(() => input.selectionStart = input.selectionEnd + input.value.length, 0);
     }
 
     return (
@@ -78,7 +81,7 @@ export default function AddTimer() {
                 <br />
                 <br />
                 <div className={styles.row}>
-                    <input type="number" 
+                    <input type="text" 
                     name="hours" 
                     placeholder={'00'} 
                     min={0} 
@@ -87,7 +90,7 @@ export default function AddTimer() {
 
                     <span>:</span>
 
-                    <input type="number" 
+                    <input type="text" 
                     name="mins" 
                     placeholder={'00'} 
                     min={0} 
@@ -98,7 +101,7 @@ export default function AddTimer() {
                     <span>:</span>
 
                     <input 
-                    type="number" 
+                    type="text" 
                     name="secs" 
                     placeholder={'00'} 
                     min={0} max={59} 

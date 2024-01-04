@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import styles from './style.module.css';
 
+import { Timers } from '@/helpers/types';
+
 function padStart(n: number, length: number) {
     const num = n.toString();
     let index = 0;
@@ -21,7 +23,7 @@ function padStart(n: number, length: number) {
 export default function Timer({ id }: { id: number }) {
     const timers = localStorage.getItem('timers') || '[]';
     const timers_list = JSON.parse(timers);
-    const timer = timers_list.at(id - 1);
+    const timer = timers_list.filter((el: Timers) => el.id == id)[0];
 
     const [seconds, setSeconds] = useState(timer.endTime);
     const [pause, setPause] = useState(true);

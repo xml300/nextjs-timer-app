@@ -27,7 +27,7 @@
     font-weight: bold;
 }
 
-.row input[type='number'] {
+.row input[type='text'] {
     width: 50px;
     height: 50px;
     font-size: 28px;
@@ -37,14 +37,10 @@
     text-align: center;
 }
 
-.row input[type='number']:hover {
+.row input[type='text']:hover {
     border: 1px solid gray;
 }
 
-.row input[type='number']::-webkit-inner-spin-button {
-    appearance: none;
-    margin: 0;
-}
 
 .formButton {
     text-align: center;

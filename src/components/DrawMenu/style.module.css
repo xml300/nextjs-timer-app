@@ -67,9 +67,10 @@
     font-size: 24px;
     font-style: italic;
     margin-top: 125px;
+    margin-left: 0px;
     transition: 0.5s;
 }
 
-.hidden div:nth-of-type(1){
+.hidden *{
     margin-left: -400px;
 }
