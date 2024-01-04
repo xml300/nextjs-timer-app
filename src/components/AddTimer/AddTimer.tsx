@@ -4,26 +4,11 @@ import { useRouter } from 'next/navigation';
 import { FormEvent } from 'react';
 import styles from './style.module.css';
 
+import { padStart } from '@/helpers/functions';
+
 export default function AddTimer() {
     const router = useRouter();
 
-    function padStart(num: string, length: number) {
-        console.log(num, length);
-        let index = 0;
-
-        for (let i = 0; i < num.length; i++) {
-            if (num.at(i) == '0' && i < num.length - 1) {
-                continue;
-            }
-
-            index = i;
-            break;
-        }
-
-        console.log(index);
-
-        return '0'.repeat(length - Math.min(length, num.length - index)) + num.slice(index);
-    }
 
     function handleInputChange(evt: FormEvent, constraint: number) {
         const input = evt.target as HTMLInputElement;
@@ -55,15 +40,17 @@ export default function AddTimer() {
         const mins = parseInt(formData.get('mins') as string || '0');
         const secs = parseInt(formData.get('secs') as string || '0');
 
+        const id = (timers_list.at(-1)) ? timers_list.at(-1).id + 1 : 1;
+
         const timer = {
-            id: timers_list.length + 1,
+            id: id,
             endTime: time(hours, mins, secs)
         }
 
         timers_list.push(timer);
 
         localStorage.setItem('timers', JSON.stringify(timers_list));
-        router.push('/timers/'+timers_list.length);
+        router.push('/timers/'+id);
     }
 
     function handleFocus(evt: FormEvent){

@@ -71,6 +71,6 @@
     transition: 0.5s;
 }
 
-.hidden *{
+.hidden{
     margin-left: -400px;
 }
