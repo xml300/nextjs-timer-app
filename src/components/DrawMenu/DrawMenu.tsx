@@ -27,14 +27,16 @@ export default function DrawMenu() {
     const [hidden, setHidden] = useState(true);
 
 
-    window.onclick = (evt) => {
-        if (evt.x > 420 && !hidden) {
-            console.log(evt.x);
-            setHidden(old => !old);
-        }
-    };
 
-
+    useEffect(() => {
+        window.onclick = (evt) => {
+            if (evt.x > 420 && !hidden) {
+                console.log(evt.x);
+                setHidden(old => !old);
+            }
+        };
+        
+    }, [hidden]);
 
     useEffect(() => {
         if (menuRef.current == null || buttonRef.current == null || addButtonRef.current == null) return;
@@ -67,7 +69,7 @@ export default function DrawMenu() {
     }, [hidden]);
 
 
-    const timers_elements = timersList.map((timer: Timers) => <DrawMenuItem timer={timer} style={styles.hidden} />);
+    const timers_elements = timersList.map((timer: Timers, idx: number) => <DrawMenuItem key={idx} timer={timer} style={styles.hidden} />);
 
 
     function handleDrawButton() {

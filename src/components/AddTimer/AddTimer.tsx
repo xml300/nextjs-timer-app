@@ -58,7 +58,7 @@ export default function AddTimer() {
 
         if(input.value == '') input.value = '00';
 
-        setTimeout(() => input.selectionStart = input.selectionEnd + input.value.length, 0);
+        if(input.selectionEnd) input.selectionStart = input.selectionEnd + input.value.length;
     }
 
     return (

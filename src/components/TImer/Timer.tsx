@@ -29,12 +29,15 @@ export default function Timer({ id }: { id: number }) {
     const [pause, setPause] = useState(true);
 
     useEffect(() => {
-        if (!pause) {
-            setSeconds((sec: number) => sec - 1);
+        if (!pause && seconds > 0) {
+            setSeconds((sec: number) => Math.max(0, sec - 1));
         }
         const interval = setInterval(() => {
-            if (!pause) {
+            if (!pause && seconds > 0) {
                 setSeconds((sec: number) => {
+                    if(sec - 1 < 0){
+                        return 0;
+                    }
                     const index = timers_list.findIndex((el: {id:number}) => el.id == id);
                     timer.endTime = sec - 1;
                     timers_list[index] = timer;
@@ -48,7 +51,7 @@ export default function Timer({ id }: { id: number }) {
         return () => {
             clearInterval(interval);
         }
-    }, [pause]);
+    }, [pause, seconds, timer, timers_list, id]);
 
     const h = Math.floor(seconds / 3600);
     const m = Math.floor((seconds - h * 3600) / 60);
