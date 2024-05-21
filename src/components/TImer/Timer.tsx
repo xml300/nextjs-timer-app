@@ -31,7 +31,7 @@ export default function Timer({ id }: { id: number }) {
     useEffect(() => {
         console.log(seconds);
         const interval = setTimeout(() => {
-            if (pause || seconds < 0) {
+            if (pause || seconds <= 0) {
                 return;
             }
             setSeconds((sec: number) => {
