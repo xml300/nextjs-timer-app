@@ -40,7 +40,7 @@ export default function Timer({ id }: { id: number }) {
                 timers_list[index] = timer;
                 localStorage.setItem('timers', JSON.stringify(timers_list));
 
-                return sec - 1;
+                return Math.max(0,sec - 1);
             });
         }, 1000);
 
