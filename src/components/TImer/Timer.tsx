@@ -36,7 +36,7 @@ export default function Timer({ id }: { id: number }) {
             }
             setSeconds((sec: number) => {
                 const index = timers_list.findIndex((el: { id: number }) => el.id == id);
-                timer.endTime = sec - 1;
+                timer.endTime = Math.max(0, sec - 1);
                 timers_list[index] = timer;
                 localStorage.setItem('timers', JSON.stringify(timers_list));
 
